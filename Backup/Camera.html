@@ -1,0 +1,40 @@
+<html>
+<head>
+<script src="jquerymin.js"></script>
+</head>
+<body onload="setup()">
+<script>
+
+
+	
+
+function setup(){
+	// Grab elements, create settings, etc.
+	var video = document.getElementById('video');
+	var image = document.getElementById('image');
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+	var mediaConfig =  { video: true };
+
+	// Put video listeners into place
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia(mediaConfig).then(function(stream) {
+			video.srcObject = stream;
+            video.play();
+        });
+    }
+	setInterval(looping,100);
+	
+function looping() {
+	context.drawImage(video, 0, 0, 640, 480);
+	var dataURL = canvas.toDataURL();
+	$.post('/image', {data:dataURL, filename:"image"});
+
+  }
+}
+</script>
+<video id="video" width="640" height="480" autoplay></video>
+<button id="snap">Snap Photo</button>
+<canvas id="canvas" width="640" height="480"></canvas>
+</body>
+</html>

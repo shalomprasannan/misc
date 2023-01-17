@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.slidercontainer {
+  width: 103%;
+  height: 150px;
+  padding: 0;
+}
+.slidercontainer input {
+  width: 120px;
+  height: 20px;
+  margin: 0;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg);
+  float : left;
+}
+.slidercontainer p {
+  width: 50px;
+  height: 100px;
+  margin: 0;
+  float : left;
+  font-weight:bold;
+}
+.monitor {
+float : left;
+}
+.monitor div {
+margin : 5px;
+padding-left : 2px;
+border-radius: 5px;
+}
+.monitor div:hover{
+box-shadow: 0px 0px 20px #999999;
+}
+</style>
+</head>
+<body onload="main()">
+<div class="slidercontainer">
+  <p style="color:#db5296;" id="angerState"> Anger </p>
+  <input id="anger" type="range" min="1" max="100" value="0">
+  
+  <p style="color:#ae71ac;"id="disguistState"> Disguist </p>
+  <input id="disguist" type="range" min="1" max="100" value="0">
+  
+  <p style="color:#6ecaf3;" id="sadnessState"> Sadness </p>
+  <input id="sadness" type="range" min="1" max="100" value="0">
+  
+  <p style="color:#83c59f;" id="surpriseState"> Surprise </p>
+  <input id="surprise" type="range" min="1" max="100" value="0">
+  
+  <p style="color:#b9d36e;" id="fearState"> Fear </p>
+  <input id="fear" type="range" min="1" max="100" value="0">
+  
+  <p style="color:#d8dc3d;" id="admirationState"> Admiration </p>
+  <input id="admiration" type="range" min="1" max="100" value="0">
+  
+  <p style="color:#f1e628;" id="joyState"> Joy </p>
+  <input id="joy" type="range" min="1" max="100" value="0">
+  
+  <p style="color:#fecf7f;" id="interestState"> Interest </p>
+  <input id="interest" type="range" min="1" max="100" value="0">
+
+</div>
+<div class="monitor">
+  <div style="background-color:#E5E133;">
+  <p id="angerState"> Love </p>
+  <input id="love" type="range" min="1" max="100" value="0"></div>
+ 
+  <div style="background-color:#c9d856;">
+  <p id="disguistState"> Submission </p>
+  <input id="submission" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#9ecc87;">
+  <p id="sadnessState"> Alarm </p>
+  <input id="alarm" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#79c8c9;">
+  <p id="surpriseState"> Disappointment </p>
+  <input id="disappointment" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#8e9ed0;">
+  <p id="fearState"> Remorse </p>
+  <input id="remorse" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#c562a1;">
+  <p id="admirationState"> Contempt </p>
+  <input id="contempt" type="range" min="1" max="100" value="0"></div>
+
+</div>
+<div class="monitor">
+  <div style="background-color:#d5dd4b;">
+  <p id="angerState"> Guilt </p>
+  <input id="guilt" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#aed16e;">
+  <p id="disguistState"> Curiosity </p>
+  <input id="curiosity" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#94cfb1;">
+  <p id="sadnessState"> Despair </p>
+  <input id="despair" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#999ba6;">
+  <p id="surpriseState"> NotDefined </p>
+  <input id="notdefined" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#a58ec5;">
+  <p id="fearState"> Envy </p>
+  <input id="envy" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#d6a096;">
+  <p id="admirationState"> Cynism </p>
+  <input id="cynism" type="range" min="1" max="100" value="0"></div>
+
+</div>
+<div class="monitor">
+  <div style="background-color:#bad664;">
+  <p id="angerState"> Delight </p>
+  <input id="delight" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#a3d398;">
+  <p id="disguistState"> Sentimentality </p>
+  <input id="sentimentality" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#b4a28d;">
+  <p id="sadnessState"> Shame </p>
+  <input id="shame" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#af8c9b;">
+  <p id="surpriseState"> Outrage </p>
+  <input id="outrage" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#b6cdb9;">
+  <p id="fearState"> Pessimism </p>
+  <input id="pessimism" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#d0ac6a;">
+  <p id="admirationState"> Morbidness </p>
+  <input id="morbidness" type="range" min="1" max="100" value="0"></div>
+
+</div>
+<div class="monitor">
+  <div style="background-color:#ed918b;">
+  <p id="angerState"> Aggression </p>
+  <input id="aggression" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#e69c5f;">
+  <p id="disguistState"> Pride </p>
+  <input id="pride" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#da976a;">
+  <p id="sadnessState"> Dominance </p>
+  <input id="dominance" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#f8db54;">
+  <p id="surpriseState"> Optimism </p>
+  <input id="optimism" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#ebd65e;">
+  <p id="fearState"> Fatalism </p>
+  <input id="fatalism" type="range" min="1" max="100" value="0"></div>
+  
+  <div style="background-color:#dcd177;">
+  <p> Anxiety </p>
+  <input id="anxiety" type="range" min="1" max="100" value="0"></div>
+
+</div>
+<div class="monitor" id="colorOut" style= "height:100px;width:100px;background-color:blue;">
+</div>
+<script>
+setInterval('main()',100);
+function main() {
+//getting inputs from basic emotions
+
+ var angerInput = parseInt(document.getElementById("anger").value);
+ var disguistInput = parseInt(document.getElementById("disguist").value);
+ var sadnessInput = parseInt(document.getElementById("sadness").value);
+ var surpriseInput = parseInt(document.getElementById("surprise").value);
+ var fearInput = parseInt(document.getElementById("fear").value);
+ var admirationInput = parseInt(document.getElementById("admiration").value);
+ var joyInput = parseInt(document.getElementById("joy").value);
+ var interestInput = parseInt(document.getElementById("interest").value);
+ 
+ var angerColor = [219, 82, 150];
+ var disguistColor = [174, 113, 172];
+ var sadnessColor = [110, 202, 243];
+ var surpriseColor = [131, 197, 159];
+ var fearColor = [185, 211, 110];
+ var admirationColor = [216,220,61];
+ var joyColor = [241,230,40];
+ var interestColor = [254, 207, 127];
+ var emotionColors = [angerColor,disguistColor,sadnessColor,surpriseColor,fearColor,admirationColor,joyColor,interestColor]
+ var emotionInputs = [angerInput,disguistInput,sadnessInput,surpriseInput,fearInput,admirationInput,joyInput,interestInput];
+ mixer(emotionColors,emotionInputs);
+ sliderSet();
+}
+
+function mixer(emotionColors,emotionInputs) {
+// var red = ((admirationColor[0]*admirationInput)+(joyColor[0]*joyInput))/(admirationInput+joyInput);
+// var green = ((admirationColor[1]*admirationInput)+(joyColor[1]*joyInput))/(admirationInput+joyInput);
+ //var blue = ((admirationColor[2]*admirationInput)+(joyColor[2]*joyInput))/(admirationInput+joyInput);
+	var i,red = 0,green = 0,blue = 0, total = 0;
+	for (i = 0; i < 8; i++) {
+		red = red + (emotionColors[i][0]*emotionInputs[i]);
+		green = green + (emotionColors[i][1]*emotionInputs[i]);
+		blue = blue + (emotionColors[i][2]*emotionInputs[i]);
+		total = total + emotionInputs[i];
+	}
+	red = red/total;
+	green = green/total;
+	blue = blue/total;
+	document.getElementById("colorOut").style.backgroundColor = "rgb("+red+","+green+","+blue+")";
+}
+
+function sliderSet() {
+ var angerState = parseInt(document.getElementById("anger").value);
+ var disguistState = parseInt(document.getElementById("disguist").value);
+ var sadnessState = parseInt(document.getElementById("sadness").value);
+ var surpriseState = parseInt(document.getElementById("surprise").value);
+ var fearState = parseInt(document.getElementById("fear").value);
+ var admirationState = parseInt(document.getElementById("admiration").value);
+ var joyState = parseInt(document.getElementById("joy").value);
+ var interestState = parseInt(document.getElementById("interest").value);
+ 
+ document.getElementById("love").value=(joyState+admirationState)/2;
+ document.getElementById("submission").value=(fearState+admirationState)/2;
+ document.getElementById("alarm").value=(fearState+surpriseState)/2;
+ document.getElementById("disappointment").value=(surpriseState+sadnessState)/2;
+ document.getElementById("remorse").value=(sadnessState+disguistState)/2;
+ document.getElementById("contempt").value=(disguistState+angerState)/2;
+ document.getElementById("aggression").value=(angerState+interestState)/2;
+ document.getElementById("optimism").value=(interestState+joyState)/2;
+ 
+ document.getElementById("guilt").value=(joyState+fearState)/2;
+ document.getElementById("curiosity").value=(admirationState+surpriseState)/2;
+ document.getElementById("despair").value=(fearState+sadnessState)/2;
+ document.getElementById("notdefined").value=(surpriseState+disguistState)/2;
+ document.getElementById("envy").value=(sadnessState+angerState)/2;
+ document.getElementById("cynism").value=(disguistState+interestState)/2;
+ document.getElementById("pride").value=(angerState+joyState)/2;
+ document.getElementById("fatalism").value=(interestState+admirationState)/2;
+ 
+ document.getElementById("delight").value=(joyState+surpriseState)/2;
+ document.getElementById("sentimentality").value=(admirationState+sadnessState)/2;
+ document.getElementById("shame").value=(fearState+disguistState)/2;
+ document.getElementById("outrage").value=(surpriseState+angerState)/2;
+ document.getElementById("pessimism").value=(sadnessState+interestState)/2;
+ document.getElementById("morbidness").value=(disguistState+joyState)/2;
+ document.getElementById("dominance").value=(angerState+admirationState)/2;
+ document.getElementById("anxiety").value=(interestState+fearState)/2;
+ 
+}
+
+
+</script>
+</body>
+</html>

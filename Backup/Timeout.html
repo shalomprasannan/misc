@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var pastHappiness=0;
+
+function main() {
+	setTimeout('Happiness()', 5000);
+};
+function Happiness() {
+	var presentHappiness=document.getElementById("happy").value;
+	var DeviationInHappiness=presentHappiness-pastHappiness;
+	if (DeviationInHappiness < -30){
+		alert("Sad");
+	}
+	pastHappiness=document.getElementById("happy").value;
+	main();
+}
+</script>
+</head>
+<body onload="main()">
+	<div class="slidercontainer">
+	  <p style="color:#001eff;"> Happy </p>
+	  <input id="happy" type="range" min="1" max="100" value="50">
+	</div>
+</body>
+</html>

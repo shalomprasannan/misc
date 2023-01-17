@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
+<style>
+.slidercontainer {
+  width: 103%;
+  height: 150px;
+  padding: 0;
+}
+.slidercontainer input {
+  width: 120px;
+  height: 20px;
+  margin: 0;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg);
+  float : left;
+}
+.slidercontainer p {
+  width: 50px;
+  height: 100px;
+  margin: 0;
+  float : left;
+  font-weight:bold;
+}
+.monitor {
+float : left;
+}
+</style>
+
+<script>
+var pastHappiness=0,pastFear=0,depressionCount=0,happiness="Happy",fearness="Fear";
+
+function main() {
+	setTimeout('Happiness()', 1000);
+};
+function Happiness() {
+	var presentHappiness=document.getElementById("happy").value;
+	var presentFear=document.getElementById("fear").value;
+	var deviationInHappiness=presentHappiness-pastHappiness;
+	var deviationInFear=presentFear-pastFear;
+	
+	if (deviationInHappiness < -30){
+		happiness="Sad";
+	}
+	else if (deviationInHappiness > 50){
+		happiness="Amazing";
+	}	
+	else if (presentHappiness < 10) {
+		depressionCount++;
+		if (depressionCount > 10){
+			happiness="Depressed";
+			depressionCount=0;
+		}
+	}
+	
+	if (presentFear < 10){
+		fearness="I don't care anything!!";
+	}
+	else if (presentFear > 40 && presentFear <= 50) {
+		fearness="Shocked";
+	}
+	else if (presentFear > 50 && presentFear <= 60) {
+		fearness="Scared";
+	}
+	else if (presentFear > 60 && presentFear <= 70) {
+		fearness="Crying";
+	}
+	else if (presentFear > 70 && presentFear <= 80) {
+		fearness="Hesitation";
+	}
+	else if (presentFear > 80 && presentFear <= 90) {
+		fearness="Breathless";
+	}
+	else if (presentFear > 90 && presentFear <= 100) {
+		fearness="Fainted";
+	}
+	pastFear=document.getElementById("fear").value;
+	pastHappiness=document.getElementById("happy").value;
+	document.getElementById("happyState").innerHTML = happiness;
+	document.getElementById("fearState").innerHTML = fearness;
+	main();
+}
+</script>
+
+</head>
+<body onload="coloring()">
+<div class="slidercontainer">
+  <p style="color:#db5296;" id="angerState"> Anger </p>
+  <input id="anger" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#ae71ac;"id="disguistState"> Disguist </p>
+  <input id="disguist" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#6ecaf3;" id="sadnessState"> Sadness </p>
+  <input id="sadness" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#83c59f;" id="surpriseState"> Surprise </p>
+  <input id="surprise" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#b9d36e;" id="fearState"> Fear </p>
+  <input id="fear" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#d8dc3d;" id="admirationState"> Admiration </p>
+  <input id="admiration" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#f1e628;" id="joyState"> Joy </p>
+  <input id="joy" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#fecf7f;" id="interestState"> Interest </p>
+  <input id="interest" type="range" min="1" max="100" value="50">
+
+</div>
+<div class="monitor">
+  <p style="color:#E5E133;" id="angerState"> Love </p>
+  <input id="anger" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#c9d856;"id="disguistState"> Submission </p>
+  <input id="disguist" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#9ecc87;" id="sadnessState"> Alarm </p>
+  <input id="sadness" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#79c8c9;" id="surpriseState"> Disappointment </p>
+  <input id="surprise" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#b9d36e;" id="fearState"> Remorse </p>
+  <input id="fear" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#d8dc3d;" id="admirationState"> Contempt </p>
+  <input id="admiration" type="range" min="1" max="100" value="50">
+
+</div>
+<div class="monitor">
+  <p style="color:#d5dd4b;" id="angerState"> Guilt </p>
+  <input id="anger" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#ae71ac;"id="disguistState"> Curiosity </p>
+  <input id="disguist" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#6ecaf3;" id="sadnessState"> Despair </p>
+  <input id="sadness" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#83c59f;" id="surpriseState"> NotDefined </p>
+  <input id="surprise" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#b9d36e;" id="fearState"> Envy </p>
+  <input id="fear" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#d8dc3d;" id="admirationState"> Cynism </p>
+  <input id="admiration" type="range" min="1" max="100" value="50">
+
+</div>
+<div class="monitor">
+  <p style="color:#db5296;" id="angerState"> Delight </p>
+  <input id="anger" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#ae71ac;"id="disguistState"> Sentimentality </p>
+  <input id="disguist" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#6ecaf3;" id="sadnessState"> Shame </p>
+  <input id="sadness" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#83c59f;" id="surpriseState"> Outrage </p>
+  <input id="surprise" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#b9d36e;" id="fearState"> Pessimism </p>
+  <input id="fear" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#d8dc3d;" id="admirationState"> Morbidness </p>
+  <input id="admiration" type="range" min="1" max="100" value="50">
+
+</div>
+<div class="monitor">
+  <p style="color:#db5296;" id="angerState"> Aggression </p>
+  <input id="anger" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#ae71ac;"id="disguistState"> Pride </p>
+  <input id="disguist" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#6ecaf3;" id="sadnessState"> Dominance </p>
+  <input id="sadness" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#83c59f;" id="surpriseState"> Optimism </p>
+  <input id="surprise" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#b9d36e;" id="fearState"> Fatalism </p>
+  <input id="mixer2" type="range" min="1" max="100" value="50">
+  
+  <p style="color:#d8dc3d;"> Anxiety </p>
+  <input id="mixer1" type="range" min="1" max="100" value="50">
+
+</div>
+<div class="monitor" id="colorOut" style= "height:100px;width:100px;background-color:blue;">
+</div>
+<script>
+function coloring() {
+//initial color is white, and the first and second will mix according to the fader level
+	var initColor_red = 150, initColor_green = 150, initColor_blue = 150
+	var firstColor_red = 216,firstColor_green = 220,firstColor_blue = 61;
+	var secondColor_red = 241,secondColor_green = 230,secondColor_blue = 41;
+//getting the difference between initial faders seperately by comparing to white	
+	var diffRed1 = initColor_red - firstColor_red;
+	var diffGreen1 = initColor_green - firstColor_green;
+	var diffBlue1 = initColor_blue - firstColor_blue;
+	var diffRed2 = initColor_red - secondColor_red;
+	var diffGreen2 = initColor_green - secondColor_green;
+	var diffBlue2 = initColor_blue - secondColor_blue;
+//getting the fader value	
+	var percentFade1 = document.getElementById("mixer1").value/100;
+	var percentFade2 = document.getElementById("mixer2").value/100;
+//mixing two colors with white to get two other colors (mixing with white)
+	diffRed1 = (diffRed1 * percentFade1) + firstColor_red;
+	diffGreen1 = (diffGreen1 * percentFade1) + firstColor_green;
+	diffBlue1 = (diffBlue1 * percentFade1) + firstColor_blue;
+	diffRed2 = (diffRed2 * percentFade2) + secondColor_red;
+	diffGreen2 = (diffGreen2 * percentFade2) + secondColor_green;
+	diffBlue2 = (diffBlue2 * percentFade2) + secondColor_blue;
+//getting difference of the last mixed two colors 
+	var diffRedOut = diffRed1 -diffRed2;
+	var diffGreenOut = diffGreen1 -diffGreen2;
+	var diffBlueOut = diffBlue1 -diffBlue2;
+//mixing at last
+	diffRedOut = (diffRedOut*0.5) + diffRed1;
+	diffGreenOut = (diffGreenOut*0.5) + diffGreen1;
+	diffBlueOut = (diffBlueOut*0.5) + diffBlue1;
+
+	document.getElementById("colorOut").style.backgroundColor = "rgb("+ diffRedOut+"," +diffGreenOut+","+diffBlueOut+")";
+	setTimeout('coloring()', 100);
+}
+</script>
+</body>
+</html>
